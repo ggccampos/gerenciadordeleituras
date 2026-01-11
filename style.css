@@ -29,6 +29,7 @@ body {
   margin: 0;
   background: #FFFFFF;
   color: var(--gray-900);
+  padding-bottom: var(--space-2xl); /* extra space after last cards */
 }
 
 /* HEADER */
