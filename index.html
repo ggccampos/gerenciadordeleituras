@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Biblioteca</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="brand">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+    <path d="M14.667 28.0003V9.33333C14.667 8.59695 15.2636 8.00033 16 8.00033C16.7363 8.00033 17.333 8.59695 17.333 9.33333V28.0003C17.3328 28.7366 16.7362 29.3333 16 29.3333C15.2637 29.3333 14.6671 28.7366 14.667 28.0003Z" fill="#030213"/>
+    <path d="M21.3336 5.33301C20.2728 5.33301 19.2547 5.75474 18.5045 6.50488C17.8014 7.20807 17.3876 8.14628 17.3385 9.13477L17.333 9.33333L17.3268 9.46973C17.2585 10.1421 16.69 10.667 15.9996 10.667C15.2634 10.6668 14.667 10.0696 14.667 9.33333C14.6669 8.27258 14.2448 7.25495 13.4948 6.50488C12.7446 5.75484 11.7274 5.33301 10.6666 5.33301H3.99963V22.667H11.9996C13.414 22.667 14.7709 23.2284 15.7711 24.2285C15.8503 24.3077 15.926 24.3901 15.9996 24.4736C16.0734 24.39 16.1498 24.3078 16.2291 24.2285C17.2292 23.2286 18.5854 22.6671 19.9996 22.667H27.9996V5.33301H21.3336ZM30.6666 22.667C30.6665 23.3741 30.3854 24.0527 29.8854 24.5527C29.3853 25.0526 28.7067 25.333 27.9996 25.333H19.9996C19.2925 25.3331 18.6139 25.6142 18.1139 26.1143C17.6139 26.6143 17.333 27.2932 17.333 28.0003L17.3268 28.1367C17.2583 28.8089 16.6902 29.3333 16 29.3333C15.3099 29.3332 14.7419 28.8088 14.6735 28.1367L14.667 28.0003L14.6539 27.7363C14.5933 27.1259 14.3229 26.5518 13.8854 26.1143C13.3853 25.6143 12.7068 25.333 11.9996 25.333H3.99963C3.29251 25.3329 2.61391 25.0528 2.11389 24.5527C1.61387 24.0527 1.3337 23.3741 1.33362 22.667V5.33301C1.3337 4.62588 1.61387 3.94729 2.11389 3.44727C2.61391 2.94725 3.29251 2.66708 3.99963 2.66699H10.6666C12.4347 2.66699 14.1303 3.369 15.3805 4.61914C15.6051 4.84379 15.8113 5.08372 15.9996 5.33496C16.188 5.08366 16.3941 4.84383 16.6188 4.61914C17.869 3.3689 19.5655 2.66699 21.3336 2.66699H27.9996C28.7067 2.66699 29.3853 2.94737 29.8854 3.44727C30.3854 3.94729 30.6665 4.62588 30.6666 5.33301V22.667Z" fill="#030213"/>
+    </svg>
+    <div class="logo"><span>Minha Biblioteca</span></div>
+  </div>
+  <button class="btn-primary add-btn" id="openModal">+ Adicionar livro</button>
+</header>
+
+<main class="container">
+
+  <section class="stats">
+    <div class="stat-card">
+      <strong id="totalBooks">0</strong>
+      <span>Total</span>
+    </div>
+    <div class="stat-card">
+      <strong id="wantRead">0</strong>
+      <span>Quero ler</span>
+    </div>
+    <div class="stat-card">
+      <strong id="reading">0</strong>
+      <span>Lendo</span>
+    </div>
+    <div class="stat-card">
+      <strong id="read">0</strong>
+      <span>Lidos</span>
+    </div>
+  </section>
+
+  <section class="filters">
+    <div class="search">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M21.271 21.271C21.7917 20.7503 22.6351 20.7503 23.1558 21.271L28.9429 27.0571C29.4636 27.5778 29.4636 28.4222 28.9429 28.9429C28.4222 29.4636 27.5778 29.4636 27.0571 28.9429L21.271 23.1558C20.7503 22.6351 20.7503 21.7917 21.271 21.271Z" fill="#0A0A0A"/>
+        <path d="M24 14.667C24 9.51244 19.8215 5.33318 14.667 5.33301C9.51233 5.33301 5.33301 9.51233 5.33301 14.667C5.33318 19.8215 9.51244 24 14.667 24C19.8214 23.9998 23.9998 19.8214 24 14.667ZM26.667 14.667C26.6668 21.2942 21.2942 26.6668 14.667 26.667C8.03968 26.667 2.66717 21.2943 2.66699 14.667C2.66699 8.03957 8.03957 2.66699 14.667 2.66699C21.2943 2.66717 26.667 8.03968 26.667 14.667Z" fill="#0A0A0A"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Buscar por título ou autor..." />
+    </div>
+
+    <select id="statusFilter">
+      <option value="Todos">Todos os status</option>
+      <option value="Quero ler">Quero ler</option>
+      <option value="Lendo">Lendo</option>
+      <option value="Lido">Lido</option>
+    </select>
+  </section> 
+
+  <section id="bookList" class="book-grid"></section>
+
+</main>
+
+<!-- MODAL -->
+<div class="modal" id="bookModal">
+  <div class="modal-content">
+    <button type="button" class="modal-close" id="modalClose" aria-label="Fechar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M23.0576 7.05752C23.5783 6.53682 24.4217 6.53682 24.9424 7.05752C25.4631 7.57822 25.4631 8.42158 24.9424 8.94228L8.9424 24.9423C8.42171 25.463 7.57834 25.463 7.05764 24.9423C6.53694 24.4216 6.53694 23.5782 7.05764 23.0575L23.0576 7.05752Z" fill="#0A0A0A"/>
+        <path d="M7.05764 7.05752C7.57834 6.53682 8.42171 6.53682 8.9424 7.05752L24.9424 23.0575C25.4631 23.5782 25.4631 24.4216 24.9424 24.9423C24.4217 25.463 23.5783 25.463 23.0576 24.9423L7.05764 8.94228C6.53694 8.42158 6.53694 7.57822 7.05764 7.05752Z" fill="#0A0A0A"/>
+      </svg>
+    </button>
+
+    <h2 id="modalTitle">Adicionar Livro</h2>
+
+    <form id="bookForm">
+      <input type="hidden" id="editIndex" />
+
+      <label>Título *</label>
+      <input type="text" id="title" placeholder="Digite o título do livro" required />
+
+      <label>Autor *</label>
+      <input type="text" id="author" placeholder="Digite o nome do autor" required />
+
+      <label>URL da imagem</label>
+      <input type="url" id="image" placeholder="URL da capa do livro (opcional)" />
+
+      <label>Status</label>
+      <select id="estado">
+        <option>Quero ler</option>
+        <option>Lendo</option>
+        <option>Lido</option>
+      </select>
+
+      <label>Avaliação</label>
+      <div class="rating-wrapper">
+        <div class="stars" id="rating"></div>
+        <button type="button" class="clear-rating" id="clearRating">
+          Limpar
+        </button>
+      </div>
+
+      <label>Comentário</label>
+      <textarea id="comment" placeholder="Suas anotações sobre o livro (opcional)"></textarea>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" id="closeModal">
+          Cancelar
+        </button>
+        <button type="submit" class="btn-primary" id="submitButton">
+          Adicionar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
